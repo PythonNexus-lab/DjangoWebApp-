@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Polls Index</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+    <h1>Latest Questions</h1>
+    <ul>
+        {% for question in latest_question_list %}
+            <li>{{ question.question_text }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>All Choices</h2>
+    <ul>
+        {% for choice in answer_list %}
+            <li>{{ choice.choice_text }} ({{ choice.votes }} votes)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
